@@ -1,0 +1,24 @@
+@inject Resume.Config.ResumeConfig Config
+<header class="header">
+    <div class="header-intro header-intro-resume theme-bg-primary text-white py-5">
+        <div class="container position-relative">
+            <h2 class="page-heading mb-3">Resume</h2>
+            <a class="btn theme-btn-on-bg download-resume position-absolute font-weight-bold mx-auto" href="#"><i class="fas fa-download mr-2"></i>Download PDF Version</a>
+        </div>
+    </div>
+</header>
+<article class="resume-wrapper text-center position-relative">
+	<div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+		@await Html.PartialAsync("_RenderHeader")
+		<div class="resume-body p-5">
+			@await Html.PartialAsync("_RenderSummary")
+			@await Html.PartialAsync("_RenderSkills")
+            @await Html.PartialAsync("_RenderExperience")
+            @await Html.PartialAsync("_RenderProjects")
+			@await Html.PartialAsync("_RenderEducation")
+		</div>
+	</div>
+</article>
+<footer class="footer text-light text-center py-2">
+	<a href="@Config.General.ResumeRepo.Url" class="text-light"><i class="@Config.General.ResumeRepo.Icon"></i> @Config.General.ResumeRepo.Name</a>
+</footer>
