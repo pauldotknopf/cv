@@ -28,7 +28,7 @@ jobs:
         ./build.sh build
         ./build.sh serve &
         sleep 10
-        google-chrome --headless --print-to-pdf="./output/cv.pdf" localhost:8000 --no-pdf-header-footer
+        google-chrome --headless --print-to-pdf="./output/cv.pdf" http://localhost:8000 --no-pdf-header-footer
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
       with: 
