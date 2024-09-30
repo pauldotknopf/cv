@@ -22,7 +22,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y wget gdebi
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo gdebi -n -i google-chrome*.deb
+        sudo gdebi -n google-chrome*.deb
     - name: Build
       run: |
         ./build.sh build
