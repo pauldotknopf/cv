@@ -19,10 +19,10 @@ jobs:
         dotnet-version: 6.0.301
     - name: Install chrome
       run: |
-        apt-get update
-        apt-get install -y wget gdebi
+        sudo apt-get update
+        sudo apt-get install -y wget gdebi
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        gdebi -n -i google-chrome*.deb
+        sudo gdebi -n -i google-chrome*.deb
     - name: Build
       run: |
         ./build.sh build
