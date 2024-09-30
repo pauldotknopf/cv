@@ -17,9 +17,18 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.301
+    - name: Install chrome
+      run: |
+        apt-get update
+        apt-get install -y wget gdebi
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        gdebi -n -i google-chrome*.deb
     - name: Build
       run: |
         ./build.sh build
+        ./build.sh serve &
+        sleep 10
+        google-chrome --headless --print-to-pdf="./output/cv.pdf" localhost:8000 --no-pdf-header-footer
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
       with: 
