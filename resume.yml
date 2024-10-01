@@ -24,6 +24,7 @@ experience:
       - Architecture
       - .NET Core
       - Microservices
+      - Dapper/OrmLite
       - Kubernetes
       - React/TypeScript
       - Micro-frontends
