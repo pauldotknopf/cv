@@ -9,7 +9,7 @@ namespace Resume.Controllers
             return View();
         }
 
-        public ActionResult Template()
+        public ActionResult Coverletter()
         {
             return View();
         }

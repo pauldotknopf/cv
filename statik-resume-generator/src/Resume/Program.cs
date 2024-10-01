@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Markdig;
@@ -78,6 +78,8 @@ namespace Resume
                 .Deserialize<Config.Resume>(File.ReadAllText(Path.Combine(_contentDirectory, "resume.yml")));
             config.General = new DeserializerBuilder().Build()
                 .Deserialize<General>(File.ReadAllText(Path.Combine(_contentDirectory, "general.yml")));
+            config.Recommendations = new DeserializerBuilder().Build()
+                .Deserialize<List<Recommendation>>(File.ReadAllText(Path.Combine(_contentDirectory, "recommendations.yml")));
 
             var markdownPipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             config.Resume.Career = Markdown.ToHtml(config.Resume.Career);
@@ -88,6 +90,10 @@ namespace Resume
             foreach (var project in config.Resume.Projects)
             {
                 project.Description = Markdown.ToHtml(project.Description, markdownPipeline);
+            }
+            foreach (var rec in config.Recommendations)
+            {
+                rec.Summary = Markdown.ToHtml(rec.Summary, markdownPipeline);
             }
             
             _webBuilder.RegisterServices(services => services.AddSingleton(config));
@@ -106,6 +112,11 @@ namespace Resume
             {
                 controller = "Resume",
                 action = "Index"
+            });
+            _webBuilder.RegisterMvc("/cover", new
+            {
+                controller = "Resume",
+                action = "Coverletter"
             });
         }
         

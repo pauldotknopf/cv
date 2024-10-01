@@ -4,9 +4,10 @@
     <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience</h2>
     <div class="resume-section-content">
         <div class="resume-timeline position-relative">
-            @foreach (var experience in Config.Resume.Experience)
+            @for (var x = 0; x < Config.Resume.Experience.Count; x++)
             {
-                <article class="resume-timeline-item position-relative pb-5">
+                var experience = Config.Resume.Experience[x];
+                <article class="resume-timeline-item position-relative pb-@(x == Config.Resume.Experience.Count -1 ? "2" : "5")">
                     <div class="resume-timeline-item-header mb-2">
                         <div class="d-flex flex-column flex-md-row">
                             <h3 class="resume-position-title font-weight-bold mb-1">@experience.Title</h3>

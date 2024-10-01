@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using YamlDotNet.Serialization;
 
 namespace Resume.Config
@@ -9,5 +10,7 @@ namespace Resume.Config
         public Resume Resume { get; set; }
         
         public General General { get; set; }
+        
+        public List<Recommendation> Recommendations { get; set; }
     }
 }

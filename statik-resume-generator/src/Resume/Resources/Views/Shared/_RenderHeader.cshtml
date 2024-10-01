@@ -1,9 +1,9 @@
 @using Resume.Config
 @inject ResumeConfig Config
-<header class="resume-header pt-4 pt-md-0">
-    <div class="media flex-column flex-md-row">
+<header class="resume-header">
+    <div class="media flex-row">
         <img class="mr-3 img-fluid picture mx-auto" src="@Url.Content(Config.Personal.Image)" alt="">
-        <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+        <div class="media-body p-4 d-flex flex-row mx-auto">
             <div class="primary-info">
                 <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">@Config.Personal.Name</h1>
                 <div class="title mb-3">@Config.Personal.PositionTitle</div>
@@ -12,7 +12,7 @@
                     <li><a href="tel:@Config.Personal.Phone"><i class="fas fa-mobile-alt fa-fw mr-2" data-fa-transform="grow-6"></i>@Config.Personal.Phone</a></li>
                 </ul>
             </div>
-            <div class="secondary-info ml-md-auto mt-2">
+            <div class="secondary-info ml-auto mt-2">
                 <ul class="resume-social list-unstyled">
                     @foreach (var link in Config.Personal.Links)
                     {
