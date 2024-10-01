@@ -1,7 +1,6 @@
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require("webpack");
-var stylesCss = new ExtractTextPlugin("[name].css");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 var options = {
     minimize: false
@@ -16,49 +15,27 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '..', 'Resume', 'Resources', 'wwwroot', 'dist')
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    })
+  ],
   module: {
     rules: [
       {
-        test: /\.scss/,
-        use: stylesCss.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: 'css-loader',
-              options: options
-            },
-            'sass-loader',
-            'resolve-url-loader'
-          ]
-        })
-      },
-      {
-        test: /\.css$/,
-        use: stylesCss.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: 'css-loader',
-              options: options
-            }
-          ]
-        })
-      },
-      {
-        test: /\.(svg|woff|woff2|ttf|eot|jpg|gif|png)$/,
+        test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: 'file-loader'
-          }
+          // Creates `style` nodes from JS strings
+          MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
         ]
       }
     ]
-  },
-  plugins: [
-      stylesCss,
-      new webpack.ProvidePlugin({
-          $: "jquery",
-          jQuery: "jquery"
-      })
-  ]
+  }
 };
