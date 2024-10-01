@@ -176,6 +176,13 @@ projects:
       - redux
       - Server-side rendering
 skills:
+  - group_name: General
+    values:
+      - Architecture/Design
+      - Networking
+      - Security
+      - Mentoring/Speaking
+      - Agile/Scrum
   - group_name: Languages
     values:
       - C#
@@ -209,7 +216,7 @@ skills:
       - Windows
   - group_name: Cloud
     values:
-      - Teraform
+      - Terraform
       - Microsoft Azure
       - Google Cloud
       - Kubernetes
