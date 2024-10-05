@@ -11,7 +11,7 @@
                     <div class="resume-timeline-item-header mb-2">
                         <div class="d-flex flex-column flex-md-row">
                             <h3 class="resume-position-title font-weight-bold mb-1">@experience.Title</h3>
-                            <div class="resume-company-name ml-auto">@experience.Company</div>
+                            <div class="resume-company-name ms-md-auto">@experience.Company</div>
                         </div>
                         <div class="resume-position-time">@experience.Time</div>
                     </div>
@@ -23,7 +23,7 @@
                             <ul class="list-inline">
                                 @foreach (var tech in experience.TechUsed)
                                 {
-                                    <li class="list-inline-item"><span class="badge badge-secondary badge-pill">@tech</span></li>
+                                    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">@tech</span></li>
                                 }
                             </ul>
                         }

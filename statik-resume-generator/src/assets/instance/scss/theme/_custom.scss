@@ -1,0 +1,34 @@
+
+.header-intro-resume
+{
+    height:265px;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+// .resume-wrapper {
+// 	margin-top: -265px;
+// 	padding-bottom: 100px;
+// }
+
+@media print {
+    .header-intro .container {
+        display: none;
+    }
+    .header-intro-resume {
+        height: 200px;
+    }
+    .resume-wrapper-inner {
+        box-shadow: none !important;
+    }
+    body {
+        background: none;
+    }
+    @media (max-width: 767.98px) {
+        .header {
+            display: none;
+        }
+    }
+}
