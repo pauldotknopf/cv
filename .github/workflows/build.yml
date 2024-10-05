@@ -31,6 +31,7 @@ jobs:
         ./build.sh serve &
         sleep 10
         sudo sysctl -w kernel.unprivileged_userns_clone=1
+        which chrome
         sudo chrome --headless --print-to-pdf="./output/cv.pdf" http://localhost:8000 --no-pdf-header-footer --no-sandbox --disable-setuid-sandbox
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
