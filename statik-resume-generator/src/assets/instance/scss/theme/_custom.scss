@@ -1,37 +1,44 @@
-
-.header-intro-resume
-{
-    height:265px;
+@media print {
+    body {
+        background: white;
+    }
+    html {
+        font-size: 90%;
+    }
+    .header-intro-resume .container {
+        display:none;
+    }
+    .header-intro-resume {
+        height: 162px;
+    }
+    @include media-breakpoint-down(sm) {
+       .header-intro-resume {
+            display: none;
+       }
+    }
+    @include media-breakpoint-up(md) {
+        .resume-header {
+            margin-left: $spacer * .5;
+            margin-right: $spacer * .5;
+        }
+        .resume-wrapper-inner {
+            box-shadow: none !important;
+        }
+    }
+    .resume-header .resume-picture-content {
+        padding-left: $spacer * 1 !important;
+        padding-right: $spacer * 1 !important;
+        padding-top: $spacer * 1 !important;
+    }
+    .skills-section {
+        page-break-before: always;
+    }
 }
 
 a, a:hover {
     text-decoration: none;
 }
 
-// .resume-wrapper {
-// 	margin-top: -265px;
-// 	padding-bottom: 100px;
-// }
-
-@media print {
-    .header-intro .container {
-        display: none;
-    }
-    .header-intro-resume {
-        height: 200px;
-    }
-    .resume-wrapper-inner {
-        box-shadow: none !important;
-    }
-    .resume-wrapper {
-        padding-bottom: 0;
-    }
-    body {
-        background: none;
-    }
-    @media (max-width: 767.98px) {
-        .header {
-            display: none;
-        }
-    }
+a.text-link, a.text-link:hover {
+    text-decoration: none;
 }

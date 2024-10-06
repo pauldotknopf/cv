@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: |
         ./build.sh build
-        chrome --headless --print-to-pdf="./output/cv.pdf" ./output/index.html --no-pdf-header-footer --no-sandbox --disable-setuid-sandbox
+        chrome --headless --print-to-pdf="./output/resume.pdf" ./output/index.html --no-pdf-header-footer --no-sandbox --disable-setuid-sandbox
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
       with: 

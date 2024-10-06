@@ -4,4 +4,13 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 700px,
+  md: 700px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
 @import "instance/scss/theme-10.scss";

@@ -2,23 +2,29 @@
 // No media query since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
+
+@include media-breakpoint-up(sm) {
+	.talk-media-holder {
+		width: 100%;
+	}
+}
+
 @media (min-width: 576px) {
 	.talk-media-holder {
 		width: 100%;
-		
 	}
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    .theme-btn-cta {
+@include media-breakpoint-up(md) {
+	.theme-btn-cta {
 		width: auto;
 		display: inline-block;
 	}
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
 	.navbar-expand-lg .navbar-nav .dropdown-menu {
 		right: 0;
 		left: inherit;
@@ -29,18 +35,16 @@
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-	
+@include media-breakpoint-up(xl) {
 	.talk-media-holder {
 		width: 60%;
 	}
-
 }
 
 
 // We occasionally use media queries that go in the other direction (the given screen size or smaller):
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
+@include media-breakpoint-down(lg) {
 	#slide-line {
 		display: none !important;
 	}
@@ -71,8 +75,7 @@
 	
 }
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
-	
+@include media-breakpoint-down(md) {
 	.author-block {
 		text-align: center;
 		.author-profile, .author-info {
@@ -172,7 +175,7 @@
 
 
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
+@include media-breakpoint-down(sm) {
 	.testimonial-item {
 		width:100%;
 		margin-right: 0;
@@ -184,15 +187,23 @@
 	#slide-line {
 		display: none !important;
 	}
-	
+
 }
 
 
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
+@include media-breakpoint-up(md) {
     .resume-picture-holder {
 		max-width:220px;
 	}
+}
 
+// Medium devices (tablets, 768px and up)
+@media print {
+	@include media-breakpoint-up(md) {
+		.resume-picture-holder {
+			max-width:180px;
+		}
+	}
 }

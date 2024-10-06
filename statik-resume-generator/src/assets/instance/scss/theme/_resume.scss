@@ -1,5 +1,5 @@
 .header-intro-resume {
-	height: 320px;
+	height: 264px;
 	.container {
 		max-width: 1000px;
 	}
@@ -16,6 +16,12 @@
 	
 }
 
+@media print {
+	.resume-wrapper {
+		margin-top: -152px;
+	}
+}
+
 .resume-wrapper-inner {
 	max-width: 1000px;
 }
@@ -23,7 +29,7 @@
 .resume-header {
 	background: $theme-text-color-primary;
 	color: rgba(256, 256, 256, 0.9);
-	height: 220px;
+	// height: 220px;
 	.picture {
 		width: 220px;
 	}
@@ -47,17 +53,23 @@
 	
 	
 }
+
+@media print {
+	.resume-header {
+		//height: 180px;
+		.picture {
+			width: 180px;
+		}
+	}
+}
+
 .resume-social {
 	font-size: 0.875rem;
 
 	.fa-container {
 		font-size: 1rem;
-		display:inline-block;
-		width: 24px;
-		height: 24px;
-		@include border-radius(0.125rem);
-		background: white;
-		color: $theme-text-color-primary;
+
+		//color: $theme-text-color-primary;
 	}
 
 }
