@@ -150,32 +150,16 @@ projects:
       - Continuous Integration
   - name: Darch
     link:
-      name: godarch.com
-      url: https://godarch.com/
+      name: github.com/godarch/darch
+      url: https://github.com/godarch/darch
       icon: fab fa-github
     description: |
       Think "Dockerfiles", but for immutable, stateless, graphical (or not) environments, booted bare-metal. I use this tool as my daily driver for Linux. Each distribution contains a custom initramfs that overlays a temporary file system over your read-only Darch images. This allows each boot to be a clean boot. Any change made to the runtime (```apt-get install```, etc) are discarded on each boot. Any change you want persisted has to be scripted and baked into your recipes (which is a good thing!).
-    tech_used:
+    tech_used: 
       - Go
       - Docker
       - containerd
       - Continuous Integration
-  - name: React ASP.NET Boilerplate
-    link:
-      name: github.com/pauldotknopf/react-aspnet-boilerplate
-      url: https://github.com/pauldotknopf/react-aspnet-boilerplate
-      icon: fab fa-github
-    description: |
-      A boilerplate project used for a few personal projects of mine. It is a clone of the default ASP.NET template, written in React, that includes login (internal/external) and account management. There aren't many opinions and uses only well-established libraries and patterns. It also includes server-side rendering, allowing ASP.NET MVC controllers to provide the data needed to render each page on the server. After the initial render, client-side routing handles all future navigation. Since the server renders JavaScript, there is no need for Razor anywhere.
-    tech_used:
-      - React
-      - ASP.NET
-      - .NET Core
-      - Entity Framework Core
-      - gulp
-      - webpack
-      - redux
-      - Server-side rendering
 skills:
   - group_name: General
     values:

@@ -22427,7 +22427,7 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
     padding-top: 1rem !important;
     padding-bottom: 0 !important;
   }
-  .skills-section {
+  .skills-section, .reference-section {
     page-break-before: always;
   }
 }
