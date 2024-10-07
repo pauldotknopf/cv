@@ -181,7 +181,7 @@ skills:
   - group_name: Client-side
     values:
       - React
-      - redux
+      - Redux/MobX
       - MobX
       - webpack/vite
       - Jest
@@ -214,7 +214,7 @@ skills:
       - SQL Server
       - SQLite
       - Cassandra
-      - Lucense/ElasticSearch
+      - Lucene/ElasticSearch
 education:
   - major: MCPD/MCTS .NET Web Developer
     time: "MCP ID: 8482776"
