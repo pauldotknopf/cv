@@ -114,7 +114,7 @@ namespace Resume
                 controller = "Resume",
                 action = "Index"
             });
-            _webBuilder.RegisterMvc("/cover", new
+            _webBuilder.RegisterMvc("/cover.html", new
             {
                 controller = "Resume",
                 action = "Coverletter"
