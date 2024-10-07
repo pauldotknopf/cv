@@ -2,32 +2,34 @@
 @inject ResumeConfig Config
 @if (Config.Recommendations.Count > 0)
 {
-    <section class="resume-section experience-section rec-section mb-5">
+    <section class="resume-section recommendations-section rec-section mb-5">
         <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Letters of recommendations</h2>
         <div class="resume-section-content">
-            <div class="resume-timeline position-relative">
-                @for(var x = 0; x < Config.Recommendations.Count; x++)
+            @for(var x = 0; x < Config.Recommendations.Count; x++)
+            {
+                var rec = Config.Recommendations[x];
+                <article class="recommendations-item">
+                    <div class="recommendations-item-quote">
+                        @Html.Raw(rec.Summary)
+                    </div>
+                    <div class="recommendations-item-header">
+                        <div class="d-flex flex-column flex-md-row">
+                            <div class="recommendations-item-name">@rec.Name <small>@rec.Position</small></div>
+                            @if (!string.IsNullOrEmpty(rec.LetterLink))
+                            {
+                                <div class="recommendations-item-link ms-md-auto">
+                                    <a href="@rec.LetterLink" class="btn btn-sm btn-light"><i class="fas fa-link me-2"></i>Read more</a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    
+                </article>
+                @if (x != Config.Recommendations.Count - 1)
                 {
-                    var rec = Config.Recommendations[x];
-                    <article class="resume-timeline-item position-relative pb-@(x == Config.Recommendations.Count -1 ? "2" : "5")">
-                        <div class="resume-timeline-item-header mb-2">
-                            <div class="d-flex flex-column flex-md-row">
-                                <h3 class="resume-position-title font-weight-bold mb-1">@rec.Name&nbsp;&nbsp;&nbsp;<a class="small" href="@rec.Profile"><i class="fa fa-address-card" data-fa-transform="shrink-2"></i></a></h3>
-                                <div class="resume-company-name ml-auto">@rec.Position</div>
-                            </div>
-                        </div>
-                        <div class="resume-timeline-item-desc">
-                            @Html.Raw(rec.Summary)
-                        </div>
-                        @if (!string.IsNullOrEmpty(rec.LetterLink))
-                        {
-                        <p class="resume-rec-letterlink">
-                            <a href="@rec.LetterLink" class="btn btn-secondary btn-sm">Read more</a>
-                        </p>
-                        }
-                    </article>
+                    <hr />
                 }
-            </div>
+            }
         </div>
     </section>
 }

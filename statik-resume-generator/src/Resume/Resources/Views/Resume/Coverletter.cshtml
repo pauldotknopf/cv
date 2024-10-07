@@ -2,16 +2,24 @@
 @{
 	Layout = "_Layout";
 }
+
 <header class="header">
-    <div class="header-intro header-intro-resume theme-bg-primary text-white py-5">
-        <div class="container position-relative">
-            <h2 class="page-heading mb-3">Resume</h2>
-            <a class="btn theme-btn-on-bg download-resume position-absolute font-weight-bold mx-auto" href="#"><i class="fas fa-download mr-2"></i>Download PDF Version</a>
-        </div>
-    </div>
+	<div class="header-intro header-intro-resume theme-bg-primary text-white py-4">
+		<div class="container position-relative">
+			<div class="row justify-content-between px-3">
+				<div class="col-block col-md-auto">
+					<h2 class="page-heading mb-3">Resume</h2>
+				</div>
+				<div class="col-block col-md-auto">
+					<a class="btn theme-btn-on-bg download-resume font-weight-bold mx-auto" href="resume.pdf" target="_blank"><i class="fas fa-download me-2"></i>Download PDF Version</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
-<article class="resume-wrapper text-center position-relative coverletter">
-	<div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+
+<article class="resume-wrapper text-center position-relative">
+	<div class="resume-wrapper-inner mx-auto text-start shadow-lg">
 		@await Html.PartialAsync("_RenderHeader")
 		<div class="resume-body p-5">
 			<section class="resume-section summary-section mb-5">

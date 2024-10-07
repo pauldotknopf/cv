@@ -31,7 +31,7 @@
         padding-top: $spacer * 1 !important;
         padding-bottom: 0 !important;
     }
-    .skills-section, .reference-section {
+    .skills-section, .reference-section, .recommendations-section {
         page-break-before: always;
     }
 }
@@ -42,4 +42,25 @@ a, a:hover {
 
 a.text-link, a.text-link:hover {
     text-decoration: none;
+}
+
+.recommendations-item-quote {
+    font-style: italic;
+    font-size: $spacer * 1.25;
+}
+
+.recommendations-item-name {
+    font-weight: bold;
+
+    small {
+        font-weight: normal;
+        margin-left: $spacer * .5;
+        font-style: italic;
+    }
+}
+
+.recommendations-item-link {
+    .btn {
+        padding: 0;
+    }
 }
